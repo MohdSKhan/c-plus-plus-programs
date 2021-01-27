@@ -1,0 +1,31 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+int main()
+{
+            
+                int n;
+                cin>>n;
+                int arr[n];
+                for(int i=0;i<n;i++){
+                    cin>>arr[i];
+                }
+
+                for(int i=0;i<=n-1;i++){//n^3
+                    for(int j=i;j<=n-1;j++){
+                        //iterating over all elements of subarray from i to j
+                        for(int k=i;k<=j;k++){
+                            cout<<arr[k]<<", ";
+                        }
+                        cout<<endl;
+                    }
+                }
+                
+
+}
+
+
+
