@@ -1,0 +1,48 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+void largest2(){
+    int n;  cin>>n;
+            cin.get();//to consume the extra '\n' char when we press enter after enetring value of n on input
+                      //otherwise cin.getline will read '\n' as an empty string in below for loop
+            char arr[1000]; char largest[1000]; int maxlen= 0;
+            for(int i=1;i<=n;i++){
+                cin.getline(arr, 1000);
+                int len= strlen(arr);
+                if(len>maxlen){
+                    maxlen= len;
+                    strcpy(largest, arr);
+                }
+            }
+
+            cout<<"largest string is "<<largest<<" and its length is "<<maxlen<<endl;
+}
+void largest1(){
+    int n;  cin>>n;
+            string arr[n];  string s; string largest=""; int maxlen= 0;
+            for(int i=0;i<=n-1;i++){
+                cin>>s;
+                int len= s.size();
+                if(len > maxlen){
+                    maxlen= len;
+                    largest= s;
+                }
+            }
+
+            cout<<"largest string is "<<largest<<" and its length is "<<maxlen<<endl;
+}
+int main()
+{
+            largest1();
+            largest2();
+            
+
+
+
+}
+
+
+
