@@ -1,0 +1,45 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+void selectionSort(int *arr,int n){
+
+    for(int i=0;i<=n-2;i++){
+
+        //find min in remaining unsorted array
+        int minv= INT_MAX, minIdx=0;
+        for(int j=i;j<=n-1;j++){
+            if(minv > arr[j]){
+                minv= arr[j];
+                minIdx= j;
+            }
+        }
+
+        swap(arr[i], arr[minIdx]);
+    }
+}
+
+int main()
+{
+            
+                int n;
+                cin>>n;
+                int arr[n];
+                for(int i=0;i<n;i++){
+                    cin>>arr[i];
+                }
+
+                selectionSort(arr,n);
+
+                for(int i=0;i<n;i++){
+                    cout<<arr[i]<<", ";
+                }
+
+                
+
+}
+
+
+
