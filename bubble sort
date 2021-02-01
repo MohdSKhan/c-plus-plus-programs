@@ -1,0 +1,47 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+void bubbleSort(int *arr,int n){
+
+    for(int round=1;round<=n-1;round++){
+        bool isSorted= true;
+        for(int j=0;j<=n-round-1;j++){
+            if(arr[j] > arr[j+1]){
+                swap(arr[j], arr[j+1]);
+                isSorted= false;
+            }
+        }
+        if(isSorted){
+            break;
+            //or 
+            //return;
+        }
+    }
+    
+}
+
+int main()
+{
+            
+                int n;
+                cin>>n;
+                int arr[n];
+                for(int i=0;i<n;i++){
+                    cin>>arr[i];
+                }
+
+                bubbleSort(arr,n);
+
+                for(int i=0;i<n;i++){
+                    cout<<arr[i]<<", ";
+                }
+
+                
+
+}
+
+
+
