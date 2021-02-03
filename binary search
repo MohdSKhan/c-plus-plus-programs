@@ -1,0 +1,45 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+int main()
+{
+           
+                int n;
+                cin>>n;
+                int arr[n];
+                for(int i=0;i<n;i++){
+                    cin>>arr[i];
+                }
+
+                int key;    cin>>key;
+                int s=0, e=n-1;
+                bool found=0;
+                while(s<=e){
+                    int mid= (s+e)/2;
+                    if(arr[mid]==key){
+                        found= true;
+                        cout<<key<<" found at "<<mid<<endl;  
+                        break;
+                    }
+
+                    else if(arr[mid]>key){
+                        e=mid-1;
+                    }
+                    else{
+                        s=mid+1;
+                    }
+                }
+
+                if(!found){
+                    cout<<key<<" not found"<<endl;
+                }
+
+                
+
+}
+
+
+
