@@ -1,0 +1,55 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+// bool palindrome2(){
+//     char arr[1000];
+//     cin.getline(arr, 1000);
+//     //int len= strlen(arr);
+//     int i=0,j=strlen(arr)-1;
+//     cout<<"length is "<<strlen(arr)<<endl;//strlen not giving correct size of char array????????
+//     while(i<j){//two pointer
+//         if(arr[i]!=arr[j]){
+//             return false;
+//         }
+//         i++; j--;
+//     }
+//     return true;
+
+// }
+
+
+bool palindrome1(){//n
+    string s;   cin>>s;
+    int len= s.size();
+
+    // for(int i=0;i<=(len-1)/2;i++){
+    //     if(s[i]!=s[len-1-i]){
+    //         return false;
+    //     }
+    // }
+    // return true;
+
+    //or
+    int i=0,j=len-1;
+    while(i<j){//two pointer
+        if(s[i]!=s[j]){
+            return false;
+        }
+        i++; j--;
+    }
+    return true;
+}
+
+int main()
+{
+            
+        cout<<palindrome1()<<endl;//string
+        cout<<palindrome2()<<endl;//char array
+
+}
+
+
+
