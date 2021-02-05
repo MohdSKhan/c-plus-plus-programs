@@ -1,0 +1,47 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+void remove2(){//n, o(1)
+    char arr[1000];
+    cin.getline(arr, 1000);
+    int len= strlen(arr);
+    int non_dup_till=0, curr=1;
+    while(curr<=len-1){
+        if(arr[curr]!=arr[non_dup_till]){
+            non_dup_till++;
+            arr[non_dup_till]= arr[curr];
+        }
+        curr++;
+    }
+    arr[non_dup_till + 1]='\0';//very important to terminate the desired string
+    cout<<arr<<endl;
+    
+}
+
+void remove1(){//n, o(n)
+    string s;   cin>>s;
+    int len= s.size();
+    string ans;
+    for(int i=0;i<=len-2;i++){
+        if(s[i]!=s[i+1]){
+            ans += s[i];
+        }
+    }
+    ans += s[len-1];
+
+    cout<<ans<<endl;
+}
+
+int main()
+{
+            
+            //remove1();
+            remove2();
+
+}
+
+
+
