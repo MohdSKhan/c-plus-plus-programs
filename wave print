@@ -1,0 +1,75 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+void wavePrintRow(){//m*n
+                int m,n;
+                cin>>m>>n;
+                int arr[m][n];
+                for(int i=0;i<m;i++){
+                    for(int j=0;j<n;j++){
+                        cin>>arr[i][j];
+                    }
+                }
+
+                //wave print
+                for(int row=0;row<m;row++){
+                    //right to left
+                    if(row&1){
+                        for(int col=n-1;col>=0;col--){
+                            cout<<arr[row][col]<<", ";
+                        }
+                    }
+                    //left to right
+                    else{
+                        for(int col=0;col<=n-1;col++){
+                            cout<<arr[row][col]<<", ";
+                        }
+                    }
+                }
+                cout<<"END"<<endl;
+}
+
+void wavePrintCol(){//m*n
+                int m,n;
+                cin>>m>>n;
+                int arr[m][n];
+                for(int i=0;i<m;i++){
+                    for(int j=0;j<n;j++){
+                        cin>>arr[i][j];
+                    }
+                }
+
+                //wave print
+                for(int col=0;col<n;col++){
+                    //bottom to top
+                    if(col&1){
+                        for(int row=m-1;row>=0;row--){
+                            cout<<arr[row][col]<<", ";
+                        }
+                    }
+                    //top to bottom
+                    else{
+                        for(int row=0;row<=m-1;row++){
+                            cout<<arr[row][col]<<", ";
+                        }
+                    }
+                }
+                cout<<"END"<<endl;
+}
+
+int main()
+{
+            
+                
+
+                //wavePrintCol();
+                wavePrintRow();
+                
+
+}
+
+
+
