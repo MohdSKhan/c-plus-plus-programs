@@ -1,0 +1,32 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+void readline(char *arr,int maxlen, char delim){
+    char ch= cin.get(); 
+    int i=0;
+    while(ch!=delim){
+        arr[i]= ch;
+        i++;
+        if(i==maxlen-1){//as we have to put '\0' at last idx
+            break;
+        }
+        ch= cin.get();
+    }
+    arr[i]= '\0';
+}
+
+int main()
+{
+            char arr[1000];
+            char delimiter= '\n';
+            int maxlen; cin>>maxlen;
+            readline(arr, 1000, delimiter);//same as cin.getline(arr,n);
+            cout<<arr<<endl;
+
+}
+
+
+
