@@ -1,0 +1,85 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+void mystrtok2(string str, char delim){
+    string newtoken="";
+    for(int i=0;i<str.length();i++){
+        if(str[i]!=delim){
+            newtoken += str[i];
+        }
+        else{
+            cout<<newtoken<<endl;
+            newtoken="";
+        }
+    }
+    cout<<newtoken<<endl;
+}
+
+char* mystrtok(char* str, char delim){
+    static char* input=NULL;//static as during every fn call its value will be taken as it is from prev fn call
+    if(str != NULL){
+        input= str;
+    }
+
+    //base case
+    if(input==NULL){
+        return NULL;
+    }
+
+    char* output= new char[strlen(input)+1];//dynamic array and not static coz static array will get destroyed after fn call is over
+    int i;
+    for( i=0;input[i]!='\0';i++){
+        if(input[i]!=delim){
+            output[i]= input[i];
+        }
+        else{
+            output[i]='\0';
+            input= input + i + 1;
+            return output;
+        }
+    }
+
+    //corner case -> last token
+    output[i]='\0';
+    input= NULL;
+    return output;
+
+    
+}
+int main()
+{
+    //char str[1000]= "Today, is a rainy , day";
+    // char *ptr= strtok(str, ",");//STL strtok(char arr, char* delim)
+    // cout<<ptr<<endl;
+
+    // while(ptr != NULL){
+    //     ptr= strtok(NULL,",");
+    //     cout<<ptr<<endl;
+    // }     
+ 
+    //APNA mystrtok 
+    // string arr; 
+    // getline(cin, arr);
+    // char delim=',';
+    //mystrtok2(arr, delim);//brute force which is completely diff from STL strtok implementation in c++
+    
+    //apna actual wala same as STL implementation
+    char str[1000]= "Today, is a rainy , day";
+    char delim=',';
+    char *ptr= mystrtok(str, delim);
+    cout<<ptr<<endl;
+    while(ptr != NULL){
+        ptr= mystrtok(NULL, delim);
+        cout<<ptr<<endl;
+    }
+
+    cout<<str<<endl;
+
+
+}
+
+
+
