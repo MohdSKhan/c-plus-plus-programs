@@ -1,0 +1,45 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+bool isPermutation(string a, string b){
+    int len1= a.size();
+    int len2= b.size();
+
+    if(len1 != len2){
+        return false;
+    }
+
+    int freq[26]={0};
+    for(int i=0;i<len1;i++){
+        freq[a[i]-'a']++;
+    }
+
+    for(int i=0;i<len2;i++){
+        freq[b[i]-'a']--;//subtracting freq to cancel the effect caused by adding 
+    }
+
+    for(int i=0;i<26;i++){
+        if(freq[i] != 0){
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+int main()
+{
+                string a,b;
+                cin>>a>>b;
+
+                cout<<isPermutation(a,b)<<endl; // o(a+b)
+            
+
+}
+
+
+
