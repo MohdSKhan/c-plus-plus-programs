@@ -1,0 +1,51 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+int solve2(int arr[][100],int r,int c){
+    //all rows individual sums
+    int rowsum; int sum1= INT_MIN;
+    for(int i=0;i<r;i++){
+        rowsum=0;
+        for(int j=0;j<c;j++){
+            rowsum += arr[i][j];
+        }          
+        sum1= max(sum1, rowsum);
+    }
+
+    //all cols individual sums
+    int colsum; int sum2= INT_MIN;
+    for(int i=0;i<r;i++){
+        colsum=0;
+        for(int j=0;j<c;j++){
+            colsum += arr[i][j];
+        }          
+        sum2= max(sum2, colsum);
+    }
+
+
+    return max(sum1, sum2);
+}
+
+int main()
+{
+            int r,c;
+            cin>>r>>c;
+            int arr[100][100];
+            int value=1;
+            for(int i=0;i<r;i++){
+                for(int j=0;j<c;j++){
+                    arr[i][j]= value++;
+                }
+                
+            }
+            
+            //solve2(arr,r,c);
+            cout<<solve2(arr,r,c)<<endl;
+
+}
+
+
+
