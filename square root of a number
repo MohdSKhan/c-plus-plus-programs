@@ -1,0 +1,83 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define lli long long int
+#define ulli unsigned long long int
+#define MOD 1000000007
+float squareroot2(int n, int p){// o(log(N) + p)...-> o(log(N))
+
+    //integer part -> o(log(N))
+    float ans;
+    int s=0, e=n;
+    while(s<=e){
+        int mid= (s+e)/2;
+        if(mid*mid==n){
+            ans= mid;
+            break;
+        }
+        else if(mid*mid>n){
+            e=mid-1;
+        }
+        else{
+            ans= mid;
+            s=mid+1;
+        }
+    }
+    
+
+
+
+    //precision p or the number of decimal places
+    //float ans=i;
+    //cout<<ans<<endl;
+    float inc= 0.1;
+    for(int x=1;x<=p;x++){//o(p)
+        
+        //ans += inc;
+        while(ans*ans<=n){// o(9) or o(constant)
+            ans += inc;
+        }
+        ans -= inc;
+        inc = inc/10;
+    }
+
+    return ans;
+}
+
+
+float squareroot1(int n, int p){// o(sqrt(N) + p)...-> o(sqrt(N))
+
+    //integer part -> o(sqrt(N))
+    int i=1;
+    while(i*i<=n){
+        i++;
+    }
+    i--;// i contains the integer part
+
+    //precision p or the number of decimal places
+    float ans=i;
+    //cout<<ans<<endl;
+    float inc= 0.1;
+    for(int x=1;x<=p;x++){//o(p)
+        
+        //ans += inc;
+        while(ans*ans<=n){// o(9) or o(constant)
+            ans += inc;
+        }
+        ans -= inc;
+        inc = inc/10;
+    }
+
+    return ans;
+}
+
+int main()
+{
+            int n, precision;
+            cin>>n>>precision;
+            cout<<squareroot1(n, precision)<<endl;//o(sqrt(N) + p)
+            cout<<squareroot2(n, precision)<<endl;//o(log(N) + p)
+}
+
+
+
